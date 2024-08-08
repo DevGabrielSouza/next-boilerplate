@@ -1,0 +1,68 @@
+{
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password",
+    "username": "Username"
+  },
+  "actions": {
+    "create": "Create",
+    "update": "Update",
+    "delete": "Delete",
+    "submit": "Submit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "search": "Search",
+    "reset": "Reset"
+  },
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "profile": "Profile",
+    "settings": "Settings",
+    "language": "Language",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "no_results_found": "No results found",
+    "city": "City",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "activities": "Activities"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalid_email": "Invalid email",
+    "min_length": "Minimum of {min} characters",
+    "max_length": "Maximum of {max} characters",
+    "password_mismatch": "Passwords do not match"
+  },
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "form": {
+    "submit": "Submit",
+    "reset": "Reset",
+    "required_field": "Required field",
+    "optional_field": "Optional field",
+    "select_option": "Select an option"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "auth": {
+    "login": "Entrar",
+    "logout": "Sair",
+    "register": "Registrar",
+    "email": "Email",
+    "password": "Senha",
+    "confirmPassword": "Confirmar Senha",
+    "forgotPassword": "Esqueceu a Senha?",
+    "resetPassword": "Redefinir Senha",
+    "username": "Nome de usuário"
+  },
+  "actions": {
+    "create": "Criar",
+    "update": "Atualizar",
+    "delete": "Excluir",
+    "submit": "Enviar",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "confirm": "Confirmar",
+    "search": "Buscar",
+    "reset": "Redefinir"
+  },
+  "common": {
+    "home": "Início",
+    "about": "Sobre",
+    "contact": "Contato",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "language": "Idioma",
+    "loading": "Carregando...",
+    "error": "Algo deu errado",
+    "no_results_found": "Nenhum resultado encontrado",
+    "city": "Cidade",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "startDate": "Data de Início",
+    "endDate": "Data de Término",
+    "activities": "Atividades"
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "invalid_email": "E-mail inválido",
+    "min_length": "Mínimo de {min} caracteres",
+    "max_length": "Máximo de {max} caracteres",
+    "password_mismatch": "As senhas não coincidem"
+  },
+  "navigation": {
+    "home": "Início",
+    "dashboard": "Painel",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "login": "Entrar",
+    "logout": "Sair",
+    "register": "Registrar",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "form": {
+    "submit": "Enviar",
+    "reset": "Redefinir",
+    "required_field": "Campo obrigatório",
+    "optional_field": "Campo opcional",
+    "select_option": "Selecione uma opção"
+  }
+}
