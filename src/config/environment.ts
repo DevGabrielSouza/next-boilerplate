@@ -1,9 +1,18 @@
-export const isDevelopment = process.env.NODE_ENV === 'development'
-export const isProduction = process.env.NODE_ENV === 'production'
-export const isTest = process.env.NODE_ENV === 'test'
+import dotenv from 'dotenv'
+dotenv.config()
 
-export default {
-  port: parseInt(process.env.PORT || '3000', 10),
-  nodeEnv: process.env.NODE_ENV || 'development',
-  apiPrefix: process.env.API_PREFIX || '/api'
+import development from './environments/development'
+import production from './environments/production'
+import test from './environments/test'
+
+const env = process.env.NODE_ENV || 'development'
+
+const environments = {
+  development,
+  production,
+  test
 }
+
+const environment = environments[env]
+
+export default environment
