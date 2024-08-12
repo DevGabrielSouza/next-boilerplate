@@ -1,13 +1,16 @@
-import createNextIntlPlugin from "next-intl/plugin";
+import createNextIntlPlugin from 'next-intl/plugin'
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin()
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
-    styledComponents: true,
+    styledComponents: true
   },
-};
+  experimental: {
+    serverComponentsExternalPackages: ['pino', 'pino-pretty']
+  }
+}
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(nextConfig)
