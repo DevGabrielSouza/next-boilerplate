@@ -1,4 +1,4 @@
-import NextAuth, { type DefaultSession, type JWT } from 'next-auth'
+import { type DefaultSession } from 'next-auth'
 
 export type ExtendedUser = DefaultSession['user'] & {
   email_verified_at: string

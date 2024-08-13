@@ -1,11 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
-import {
-  HttpClient,
-  HttpRequest,
-  HttpResponse,
-  HttpError,
-  HttpMethod
-} from './http-client'
+import { HttpClient, HttpRequest, HttpResponse, HttpError } from './http-client'
 import { HeaderNormalizer } from './header-normalizer'
 
 export class AxiosHttpClient implements HttpClient {
