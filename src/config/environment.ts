@@ -1,6 +1,3 @@
-import dotenv from 'dotenv'
-dotenv.config()
-
 import development from './environments/development'
 import production from './environments/production'
 import test from './environments/test'
