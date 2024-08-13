@@ -1,5 +1,5 @@
 'use client'
-import { ThemeType } from '@/@types/style'
+import { ThemeType } from '@/types/style'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
