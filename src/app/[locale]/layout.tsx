@@ -2,11 +2,12 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
-import '../globals.css'
+import '@/app/globals.css'
 import { defaultTheme } from '@/styles/themes/default'
 import { GlobalStyle } from '@/styles/globalStyles'
 import AppTheme from '@/shared/app-theme'
-
+import { SessionProvider } from 'next-auth/react'
+import { auth } from '@/auth'
 const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -22,16 +23,19 @@ export default async function LocaleLayout({
   params: { locale: string }
 }>) {
   const messages = await getMessages()
+  const session = await auth()
 
   return (
     <html lang={locale}>
       <body className={openSans.className}>
-        <NextIntlClientProvider messages={messages}>
+        <SessionProvider session={session}>
           <AppTheme theme={defaultTheme}>
-            <GlobalStyle />
-            {children}
+            <NextIntlClientProvider messages={messages}>
+              <GlobalStyle />
+              {children}
+            </NextIntlClientProvider>
           </AppTheme>
-        </NextIntlClientProvider>
+        </SessionProvider>
       </body>
     </html>
   )
