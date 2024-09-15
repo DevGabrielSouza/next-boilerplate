@@ -39,7 +39,9 @@ class RouteHandler {
   }
 
   isAuthRoute(): boolean {
-    return authRoutes.includes(this.pathNameWithoutLocale)
+    return authRoutes.some((route) =>
+      this.pathNameWithoutLocale.startsWith(route)
+    )
   }
 
   isApiAuthRoute(): boolean {
@@ -47,7 +49,9 @@ class RouteHandler {
   }
 
   isPrivateRoute(): boolean {
-    return privateRoutes.includes(this.pathNameWithoutLocale)
+    return privateRoutes.some((route) =>
+      this.pathNameWithoutLocale.startsWith(route)
+    )
   }
 
   handleRedirection(isLoggedIn: boolean): NextResponse | undefined {

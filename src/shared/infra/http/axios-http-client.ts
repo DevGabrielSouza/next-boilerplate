@@ -1,8 +1,35 @@
-import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
+import axios, {
+  AxiosRequestConfig,
+  AxiosResponse,
+  AxiosError,
+  AxiosInstance
+} from 'axios'
 import { HttpClient, HttpRequest, HttpResponse, HttpError } from './http-client'
 import { HeaderNormalizer } from './header-normalizer'
 
+import logger from '@/config/logger'
+
 export class AxiosHttpClient implements HttpClient {
+  private readonly axiosInstance: AxiosInstance
+
+  constructor() {
+    this.axiosInstance = axios.create()
+
+    this.axiosInstance.interceptors.response.use(
+      (response: AxiosResponse) => {
+        return response
+      },
+      async (error: AxiosError) => {
+        if (error.response?.status === 401) {
+          logger.error('Unauthorized request')
+          return false
+        }
+
+        return Promise.reject(error)
+      }
+    )
+  }
+
   async request<T>(request: HttpRequest): Promise<HttpResponse<T>> {
     const axiosConfig: AxiosRequestConfig = {
       url: request.url,
@@ -13,7 +40,8 @@ export class AxiosHttpClient implements HttpClient {
     }
 
     try {
-      const axiosResponse: AxiosResponse<T> = await axios(axiosConfig)
+      const axiosResponse: AxiosResponse<T> =
+        await this.axiosInstance(axiosConfig)
 
       return {
         status: axiosResponse.status,
@@ -32,5 +60,9 @@ export class AxiosHttpClient implements HttpClient {
 
       throw httpError
     }
+  }
+
+  private async renewToken(): Promise<string | null> {
+    return null
   }
 }
