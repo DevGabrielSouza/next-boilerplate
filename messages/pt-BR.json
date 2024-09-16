@@ -40,7 +40,10 @@
     "previous": "Anterior",
     "startDate": "Data de Início",
     "endDate": "Data de Término",
-    "activities": "Atividades"
+    "activities": "Atividades",
+    "updateProfile": "Atualizar Perfil",
+    "upgradePlan": "Atualizar Plano",
+    "upgrade": "Atualizar"
   },
   "validation": {
     "required": "Este campo é obrigatório",

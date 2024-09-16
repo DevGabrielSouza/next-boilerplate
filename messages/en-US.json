@@ -40,7 +40,10 @@
     "previous": "Previous",
     "startDate": "Start Date",
     "endDate": "End Date",
-    "activities": "Activities"
+    "activities": "Activities",
+    "updateProfile": "Update Profile",
+    "upgradePlan": "Upgrade Plan",
+    "upgrade": "Upgrade"
   },
   "validation": {
     "required": "This field is required",
