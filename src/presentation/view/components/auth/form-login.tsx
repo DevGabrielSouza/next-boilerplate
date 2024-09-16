@@ -1,64 +1,64 @@
 'use client'
-import { AuthProvider } from '@/shared/domain/enums/auth-provider.enum'
-import { signIn } from 'next-auth/react'
-import { useTranslations } from 'next-intl'
-import React from 'react'
 
-type FormLoginProps = {
-  provider: AuthProvider
-  credentials?: {
-    email: string
-    password: string
-  }
-}
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent
+} from '@/presentation/view/components/ui/card'
+import { Button } from '@/presentation/view/components/ui/button'
+
+import { useTranslations } from 'next-intl'
+import Link from 'next/link'
+import environment from '@/config/environment'
+import { GitHubLogoIcon } from '@radix-ui/react-icons'
+import GoogleIcon from '../icons/google-icon'
 
 export default function FormLogin() {
   const t = useTranslations()
 
-  const handleLogin = async ({ provider, credentials }: FormLoginProps) => {
-    signIn(provider, credentials)
-  }
-
   return (
-    <div>
-      <p>{t('form.select_option')}</p>
-
-      <form
-        onSubmit={(event) => {
-          event.preventDefault()
-          handleLogin({
-            provider: AuthProvider.CREDENTIALS,
-            credentials: {
-              email: 'devgabrielsouza@yahoo.com',
-              password: '123456782'
-            }
-          })
-        }}
-      >
-        <input
-          type='email'
-          placeholder='Email'
-          className='border border-gray-400 p-2 mb-4'
-        />
-        <input
-          type='password'
-          placeholder='Password'
-          className='border border-gray-400 p-2 mb-4'
-        />
-        <button
-          type='submit'
-          className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-        >
-          Login
-        </button>
-      </form>
-
-      <button
-        className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
-        onClick={() => handleLogin({ provider: AuthProvider.GOOGLE })}
-      >
-        Login with Google
-      </button>
+    <div className='flex h-screen w-full items-center justify-center bg-background px-4'>
+      <Card className='mx-auto w-full max-w-md'>
+        <CardHeader className='text-center'>
+          <CardTitle className='text-3xl font-bold'>
+            {t('auth.welcome')}
+          </CardTitle>
+          <CardDescription className='text-muted-foreground'>
+            {t('auth.signIn')}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className='flex flex-col space-y-2'>
+          <AuthButton
+            href={`${environment.apiBaseUrl}/auth/github/`}
+            icon={<GitHubLogoIcon className='mr-2 h-5 w-5' />}
+            label='Sign in with GitHub'
+          />
+          <AuthButton
+            href={`${environment.apiBaseUrl}/auth/google/`}
+            icon={<GoogleIcon className='mr-2 h-5 w-5' />}
+            label='Sign in with Google'
+          />
+        </CardContent>
+      </Card>
     </div>
+  )
+}
+
+interface AuthButtonProps {
+  href: string
+  icon: React.ReactNode
+  label: string
+}
+
+function AuthButton({ href, icon, label }: AuthButtonProps) {
+  return (
+    <Link href={href} passHref className='w-full'>
+      <Button variant='outline' className='w-full'>
+        {icon}
+        {label}
+      </Button>
+    </Link>
   )
 }

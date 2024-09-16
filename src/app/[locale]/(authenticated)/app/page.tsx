@@ -6,8 +6,11 @@ export default async function AppPage() {
 
   return (
     <div>
-      <h1>App Page</h1>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
+      <h1>Protected Page</h1>
+      <p>Welcome {user?.email}</p>
+      <pre>
+        <p>{JSON.stringify(user, null, 2)}</p>
+      </pre>
     </div>
   )
 }
