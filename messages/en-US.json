@@ -2,13 +2,15 @@
   "auth": {
     "login": "Login",
     "logout": "Logout",
+    "welcome": "Welcome",
     "register": "Register",
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm Password",
     "forgotPassword": "Forgot Password?",
     "resetPassword": "Reset Password",
-    "username": "Username"
+    "username": "Username",
+    "signIn": "Sign in to your account"
   },
   "actions": {
     "create": "Create",
@@ -38,7 +40,10 @@
     "previous": "Previous",
     "startDate": "Start Date",
     "endDate": "End Date",
-    "activities": "Activities"
+    "activities": "Activities",
+    "updateProfile": "Update Profile",
+    "upgradePlan": "Upgrade Plan",
+    "upgrade": "Upgrade"
   },
   "validation": {
     "required": "This field is required",
@@ -64,5 +69,8 @@
     "required_field": "Required field",
     "optional_field": "Optional field",
     "select_option": "Select an option"
+  },
+  "app": {
+    "description": "A template for quickly building micro-SaaS, focused on validating MVPs. It uses Prisma, PostgreSQL, DDD, and Clean Architecture to ensure a solid and scalable foundation."
   }
 }

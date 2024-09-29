@@ -2,13 +2,15 @@
   "auth": {
     "login": "Entrar",
     "logout": "Sair",
+    "welcome": "Bem-vindo",
     "register": "Registrar",
     "email": "Email",
     "password": "Senha",
     "confirmPassword": "Confirmar Senha",
     "forgotPassword": "Esqueceu a Senha?",
     "resetPassword": "Redefinir Senha",
-    "username": "Nome de usuário"
+    "username": "Nome de usuário",
+    "signIn": "Faça login na sua conta"
   },
   "actions": {
     "create": "Criar",
@@ -38,7 +40,10 @@
     "previous": "Anterior",
     "startDate": "Data de Início",
     "endDate": "Data de Término",
-    "activities": "Atividades"
+    "activities": "Atividades",
+    "updateProfile": "Atualizar Perfil",
+    "upgradePlan": "Atualizar Plano",
+    "upgrade": "Atualizar"
   },
   "validation": {
     "required": "Este campo é obrigatório",
@@ -64,5 +69,8 @@
     "required_field": "Campo obrigatório",
     "optional_field": "Campo opcional",
     "select_option": "Selecione uma opção"
+  },
+  "app": {
+    "description": "Um template para criar micro-SaaS rapidamente, focado na validação de MVPs. Ele usa Prisma, PostgreSQL, DDD e Clean Architecture para garantir uma base sólida e escalável."
   }
 }
